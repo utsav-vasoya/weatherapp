@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -44,7 +45,7 @@ app.get('/products', (req, res) => {
 app.get('*', (req, res) => {
     res.send('page not found');
 })
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('server listing at port 3000');
 
 })
